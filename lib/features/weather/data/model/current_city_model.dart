@@ -63,7 +63,7 @@ class CurrentCityModel extends CurrentCityEntity {
     if (json['weather'] != null) {
       weather = [];
       json['weather'].forEach((v) {
-        weather?.add(Weather.fromJson(v));
+        weather.add(Weather.fromJson(v));
       });
     }
     return CurrentCityModel(

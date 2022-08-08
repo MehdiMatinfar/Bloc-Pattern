@@ -6,7 +6,7 @@ abstract class CurrentWeatherState {}
 
 class CurrentWeatherLoading extends CurrentWeatherState {}
 class CurrentWeatherCompleted extends CurrentWeatherState {
-  final CurrentCityEntity? currentCityEntity;
+   CurrentCityEntity? currentCityEntity;
 
    CurrentWeatherCompleted(this.currentCityEntity);
 }
