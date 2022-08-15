@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
             return false;
           },
         ),
-        SizedBox(
+        const SizedBox(
           height: 12,
         ),
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
             },
             child: Text('Increase'),
           ),
-          SizedBox(
+          const SizedBox(
             width: 24,
           ),
           ElevatedButton(

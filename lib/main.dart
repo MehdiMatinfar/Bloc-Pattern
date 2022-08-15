@@ -23,6 +23,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: MultiBlocProvider(
             providers: [BlocProvider(create: (context) => locator<HomeBloc>())],
-            child: MainWrapper()));
+            child: const MainWrapper()));
   }
 }

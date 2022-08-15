@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:weather_app/core/utils/constants.dart';
 
 class ApiProvider {
-  final Dio _dio = new Dio();
+  final Dio _dio =  Dio();
   final _apiKey = Constants.API_KEY;
 
   Future<dynamic> callCurrentWeatherApi(String cityName) async {
