@@ -15,7 +15,7 @@ class MainWrapper extends StatefulWidget {
 
 class _MainWrapperState extends State<MainWrapper> {
   var pages = <Widget>[const HomeScreen(), const BookMarkScreen()];
-  Widget _showPage =   HomeScreen();
+  Widget _showPage =   const HomeScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,6 @@ class _MainWrapperState extends State<MainWrapper> {
         .add(LoadCurrentWeatherEvent(cityName: 'Tehran'));
     int _page = 0;
 
-    GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.transparent,
@@ -35,10 +34,8 @@ class _MainWrapperState extends State<MainWrapper> {
           Icon(Icons.bookmark, size: 30),
         ],
         onTap: (index) {
-          //Handle button tap
           setState(() {
             _showPage = _pageChooser(index);
-            print(index);
           });
         },
         letIndexChange: (index) => true,
@@ -57,11 +54,9 @@ class _MainWrapperState extends State<MainWrapper> {
     {
       case 0:
         return pages[0];
-        break;
 
       case 1:
         return pages[1];
-        break;
 
 
 
@@ -72,42 +67,4 @@ class _MainWrapperState extends State<MainWrapper> {
 
 }
 
-// class MainWrapper extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     PageController pc=PageController(initialPage: 0);
-//     BlocProvider.of<HomeBloc>(context)
-//         .add(LoadCurrentWeatherEvent(cityName: 'Tehran'));
-//
-//     return Scaffold(bottomNavigationBar:   CurvedNavigationBar(
-//       backgroundColor: Colors.blueAccent,
-//       items: <Widget>[
-//         Icon(Icons.add, size: 30),
-//         Icon(Icons.list, size: 30),
-//       ],
-//       onTap: (index) {
-//         //Handle button tap
-//       },
-//     ),
-//       body: BlocBuilder<HomeBloc, HomeState>(
-//         builder: (context, state) {
-//           if (state is CurrentWeatherLoading) {
-//             return Center(
-//               child: CircularProgressIndicator(),
-//             );
-//           } else if (state is CurrentWeatherCompleted) {
-//             return Center(
-//               child: Text('Completed! '),
-//             );
-//           } else if (state is CurrentWeatherError) {
-//             return Center(
-//               child: Text('Error!'),
-//             );
-//           }
-//           return Container(child: Text('Nothing!'),);
-//         },
-//       ),
-//       appBar: AppBar(),
-//     );
-//   }
-// }
+
