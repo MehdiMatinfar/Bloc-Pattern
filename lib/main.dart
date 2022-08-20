@@ -5,7 +5,7 @@ import 'package:weather_app/features/weather/presentation/screen/home_screen.dar
 import 'package:weather_app/test-bloc-learn_bloc/counter_cubit.dart';
 import 'package:weather_app/test-bloc-learn_bloc/home_page.dart';
 
-import 'config/locator.dart';
+import 'config/dependency_injection/locator.dart';
 import 'core/widgets/main_wrapper.dart';
 
 void main() async {

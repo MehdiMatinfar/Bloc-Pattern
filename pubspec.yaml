@@ -41,6 +41,7 @@ dependencies:
   get_it: ^7.2.0
   curved_navigation_bar: ^1.0.3
   intl: ^0.17.0
+  flutter_spinkit: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +69,14 @@ flutter:
   assets:
     - assets/images/dark.jpeg
     - assets/images/nature.jpeg
+    - assets/images/icons8-partly-cloudy-day-80.png
+    - assets/images/icons8-clouds-80.png
+    - assets/images/icons8-heavy-rain-80.png
+    - assets/images/icons8-rain-cloud-80.png
+    - assets/images/icons8-snow-80.png
+    - assets/images/icons8-storm-80.png
+    - assets/images/icons8-windy-weather-80.png
+    - assets/images/icons8-sun-96.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

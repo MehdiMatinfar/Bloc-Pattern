@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:weather_app/core/utils/constants.dart';
+import 'package:weather_app/config/constants.dart';
 
 class ApiProvider {
   final Dio _dio =  Dio();

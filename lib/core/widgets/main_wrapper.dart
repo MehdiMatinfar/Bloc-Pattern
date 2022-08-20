@@ -19,19 +19,18 @@ class _MainWrapperState extends State<MainWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<HomeBloc>(context)
-        .add(LoadCurrentWeatherEvent(cityName: 'Tehran'));
     int _page = 0;
 
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.transparent,
+        color: Colors.black,
+        backgroundColor: Colors.black87,
         animationDuration: const Duration(milliseconds: 600),
         index: _page,
         height: 60,
         items: const <Widget>[
-          Icon(Icons.home, size: 30),
-          Icon(Icons.bookmark, size: 30),
+          Icon(Icons.home, size: 30,color: Colors.white,),
+          Icon(Icons.bookmark, size: 30,color: Colors.white),
         ],
         onTap: (index) {
           setState(() {
