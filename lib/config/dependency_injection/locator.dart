@@ -5,6 +5,8 @@ import 'package:weather_app/features/weather/domain/repository/weather_repositor
 import 'package:weather_app/features/weather/domain/usecase/current_weather_usecase.dart';
 import 'package:weather_app/features/weather/presentation/bloc/home/home_bloc.dart';
 
+import '../../features/weather/domain/usecase/forecast_7days_usecase.dart';
+
 GetIt locator = GetIt.instance;
 
 setup(){
@@ -12,7 +14,8 @@ setup(){
   locator.registerSingleton<ApiProvider>(ApiProvider());
   locator.registerSingleton<WeatherRepository>(WeatherRepositoryImpl(locator()));
   locator.registerSingleton<CurrentWeatherUseCase>(CurrentWeatherUseCase(locator()));
-  locator.registerSingleton<HomeBloc>(HomeBloc(locator()));
+  locator.registerSingleton<Forecast7DaysUsecase>(Forecast7DaysUsecase(locator()));
+  locator.registerSingleton<HomeBloc>(HomeBloc(locator(),locator()));
 
 
 }
