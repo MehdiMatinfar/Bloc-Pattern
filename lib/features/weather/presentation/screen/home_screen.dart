@@ -35,6 +35,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             BlocConsumer<HomeBloc, HomeState>(
               builder: (context, state) {
+
                 if (state.currentWeatherState is CurrentWeatherLoading) {
                   return const Expanded(
                     child: LoaderIndicator(),
@@ -46,7 +47,9 @@ class HomeScreen extends StatelessWidget {
                   final CurrentCityEntity currentCityEntity =
                       currentWeatherCompleted.currentCityEntity!;
 
-                  final ForecastParams params = ForecastParams(lon:currentCityEntity.coord!.lon! ,lat:currentCityEntity.coord!.lat! );
+                  final ForecastParams params = ForecastParams(
+                      lon: currentCityEntity.coord!.lon!,
+                      lat: currentCityEntity.coord!.lat!);
                   BlocProvider.of<HomeBloc>(context)
                       .add(LoadForecast7DaysEvent(params: params));
                   return Expanded(
@@ -244,13 +247,19 @@ class HomeScreen extends StatelessWidget {
                       )
                     ],
                   ));
-                } else if (state.currentWeatherState is CurrentWeatherError) {
+                }
+
+                else if (state.currentWeatherState is CurrentWeatherError) {
+                  CurrentWeatherError cwError =  state.currentWeatherState as CurrentWeatherError;
+                  print("Error! ${cwError.message}");
                   return const Center(
-                    child: Text('Error!'),
+                    child: Text("Error!",style: TextStyle(color: Colors.white,fontSize: 28),),
                   );
-                } else {
+                }
+
+                else {
                   return const Center(
-                    child: Text('Nothing!'),
+                    child: Text('Nothing!',style: TextStyle(color: Colors.white,fontSize: 28)),
                   );
                 }
               },

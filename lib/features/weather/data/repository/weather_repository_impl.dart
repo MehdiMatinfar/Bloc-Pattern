@@ -28,11 +28,11 @@ class WeatherRepositoryImpl extends WeatherRepository {
         CurrentCityEntity cityEntity = CurrentCityModel.fromJson(response.data);
         return  DataStateSuccessfully(data: cityEntity);
       }
-      return  DataStateError(error: "Wrong ... Try Again.");
+      return  DataStateError(error: "Wrong ... Try Again Status Code is : ${response.statusCode}");
 
     }
     catch (e) {
-      return  DataStateError(error: "Wrong ... Try Again.");
+      return  DataStateError(error: "Wrong ... Try Again Exception is : ${e.toString()}");
 
     }
   }
@@ -48,11 +48,11 @@ class WeatherRepositoryImpl extends WeatherRepository {
         Forecast7DaysEntity forecast7daysEntity = Forecast7DaysModel.fromJson(response.data);
         return  DataStateSuccessfully(data: forecast7daysEntity);
       }
-      return  DataStateError(error: "Wrong ... Try Again.");
+      return  DataStateError(error: "Wrong ... Try Again Status Code is : ${response.statusCode}");
 
     }
     catch (e) {
-      return  DataStateError(error: "Wrong ... Try Again.");
+      return  DataStateError(error: "Wrong ... Try Again Exception is : ${e.toString()}");
 
     }
   }
